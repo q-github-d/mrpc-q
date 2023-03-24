@@ -1,5 +1,4 @@
-
-FROM python:3.7-slim-stretch
+FROM python:3.9.16
 
 # This prevents Python from writing out pyc files
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -10,7 +9,7 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /src/app
 
 # copy requirements.txt
-COPY ./requirements.txt /src/app/requirements.txt
+COPY requirements.txt /src/app/requirements.txt
 
 # install system dependencies
 RUN apt-get update \
@@ -20,9 +19,9 @@ RUN apt-get update \
     && pip install --no-cache-dir -r requirements.txt
 
 # copy project
-COPY ./flask_py.py /src/app
+COPY ./flask_ap.py /src/app
 COPY ./utils1.py /src/app
-COPY ./model_weights.h5 /src/app
+COPY ./my_model_weights.h5 /src/app
 COPY ./tokenizer.pickle /src/app
 
 # set app port
