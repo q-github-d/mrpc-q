@@ -30,4 +30,4 @@ EXPOSE 4002
 ENTRYPOINT [ "python" ] 
 
 # Run app.py when the container launches
-CMD [ "flask_py.py","run","--host","0.0.0.0"] 
+CMD [ "flask_ap.py","run","--host","0.0.0.0"] 
